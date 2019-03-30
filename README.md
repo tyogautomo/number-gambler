@@ -1,6 +1,6 @@
 # Tebak Angka
 
-**Tebak Angka** is a very simple games that asks you to guess the number from 1 until 10.
+**Tebak Angka** is a very simple game that asks you to guess the number from 1 until 10.
 The computer will random the number from 1 until 10.
 If you guess the number exactly equal the computer choosen number, you won the game.
 
