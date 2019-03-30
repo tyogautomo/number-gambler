@@ -6,4 +6,4 @@ If you guess the exact number like the computer choose, you won the game.
 
 Welcome to the simplest gambling game :)
 
-To play this game, just click this [Link](/tebak_angka)
+To play this game, just click this [Link]
