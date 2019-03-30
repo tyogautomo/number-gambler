@@ -55,6 +55,7 @@ while (playGame) {
 
     var compNumber = random;
 
+    // CONDITION
     if (compNumber == userNumber) {
         playGame = confirm("Computer choose: " + compNumber + "\nYOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
     } else if (userNumber < compNumber) {
