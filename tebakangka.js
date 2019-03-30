@@ -56,12 +56,14 @@ while (playGame) {
     var compNumber = random;
 
     if (compNumber == userNumber) {
-        playGame = confirm("YOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
+        playGame = confirm("Computer choose: " + compNumber + "\nYOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
+    } else if (userNumber < compNumber) {
+        playGame = confirm("Computer choose: " + compNumber + "\nThe number you guessed is to low :( \nWant to try more?");
     } else {
-        playGame = confirm("Sorry you guess the wrong number :( \nWant to try more?");
+        playGame = confirm("Computer choose: " + compNumber + "\nThe number you guessed is to high :( \nWant to try more?");
     }
 
-    if (compNumber != userNumber) {
+    if (userNumber != compNumber) {
         n--
     } else {
         n = 5;
