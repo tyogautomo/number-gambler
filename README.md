@@ -12,7 +12,7 @@ Welcome to the simplest gambling game :)
 4. If the dialog box closed, just simply refresh the page.
 
 
-To play this game, just click [PLAY GAME!](https://tyogautomo.github.io/tebak_angka/)
+To play this game, just click [PLAY GAME!](https://tyogautomo.github.io/number_gambler/)
 
 
 ###                       *========================== HAPPY GUESSING ==========================*
