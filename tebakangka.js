@@ -1,4 +1,4 @@
-alert("Welcome to \"Guess the Number\" game!!")
+alert("Welcome to \"Number Gambler\" game!!")
 
 var playGame = true;
 var n = 5;
