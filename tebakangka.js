@@ -1,14 +1,17 @@
-alert("Selamat datang di Game Tebak Angka.")
+alert("Welcome to \"Guess the Number\" game!!")
 
 var playGame = true;
+var n = 5;
 
 while (playGame) {
+    alert("You have " + n + " chance(s) remaining.");
+
     // USER CHOICE
     var ngisiAngka = true;
     while (ngisiAngka) {
-        var userNumber = (prompt("Silahkan tebak angka dari 1 sampai 10:"));
+        var userNumber = (prompt("Guess the number from 1 to 10:"));
         if (userNumber > 10 || userNumber < 1) {
-            alert("Angka harus antara 1 - 10");
+            alert("Number must be from 1 to 10");
         } else {
             ngisiAngka = false;
         }
@@ -53,11 +56,20 @@ while (playGame) {
     var compNumber = random;
 
     if (compNumber == userNumber) {
-        alert("Selamat tebakkan kamu benar!!!!");
+        playGame = confirm("YOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
     } else {
-        alert("Tebakkan kamu salah!!!")
+        playGame = confirm("Sorry you guess the wrong number :( \nWant to try more?");
     }
-    playGame = confirm("Ingin coba lagi?");
+
+    if (compNumber != userNumber) {
+        n--
+    } else {
+        n = 5;
+    }
+    if (n == 0) {
+        playGame = confirm("GAME OVER!!!! Play again??")
+        n = 5
+    }
 }
 
 alert("THANKS FOR PLAYING THIS SIMPLE GAMBLING GAME!!")
