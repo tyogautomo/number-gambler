@@ -1,14 +1,29 @@
-alert("Welcome to \"Guess the Number\" game!!")
+alert("Welcome to \"Number Gambler\" game!!")
 
-var gameOn = true;
-var n = 3;
-var compNumber;
+var playGame = true;
+var n = 5;
 
-while (gameOn) {
-    var playGame = true;
+while (playGame) {
+    alert("You have " + n + " chance(s) remaining.");
+
+    // USER CHOICE
+    var ngisiAngka = true;
+    while (ngisiAngka) {
+        var userNumber = (prompt("Guess the number from 1 to 10:"));
+        if (userNumber == null) {
+            ngisiAngka = false;
+            playGame = false;
+            gameOn = false;
+        } else if (userNumber > 10 || userNumber < 1) {
+            alert("Number must be from 1 to 10");
+        } else {
+            ngisiAngka = false;
+        }
+    }
 
     // COMPUTER CHOICE
     var random = Math.floor(Math.random() * 10);
+
     switch (random) {
         case 0:
             random = 1;
@@ -42,53 +57,29 @@ while (gameOn) {
             break;
     }
 
-    compNumber = random;
+    var compNumber = random;
 
-    while (playGame) {
-        alert("You have " + n + " chance(s) remaining.");
+    // CONDITION
+    if (compNumber == userNumber) {
+        playGame = confirm("Computer choose: " + compNumber + "\nYOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
+    } else if (userNumber == null) {
+        ngisiAngka = false;
+        playGame = false;
+        gameOn = false;
+    } else if (userNumber < compNumber) {
+        playGame = confirm("Computer choose: " + compNumber + "\nThe number you guessed is to low :( \nWant to try more?");
+    } else {
+        playGame = confirm("Computer choose: " + compNumber + "\nThe number you guessed is to high :( \nWant to try more?");
+    }
 
-        // USER CHOICE
-        var ngisiAngka = true;
-        while (ngisiAngka) {
-            var userNumber = (prompt("Guess the number from 1 to 10:"));
-            if (userNumber == null) {
-                ngisiAngka = false;
-                playGame = false;
-                gameOn = false;
-            } else if (userNumber > 10 || userNumber < 1) {
-                alert("Number must be from 1 to 10");
-            } else {
-                ngisiAngka = false;
-            }
-        }
-
-        // CONDITION
-        if (compNumber == userNumber) {
-            gameOn = confirm("Computer choose: " + compNumber + "\nYOU GUESS THE RIGHT NUMBER!! \nWant to try more?");
-            playGame = false;
-        } else if (userNumber == null) {
-            ngisiAngka = false;
-            playGame = false;
-            gameOn = false;
-        } else if (userNumber < compNumber) {
-            alert("\nThe number you guessed is to low :( \nTry again!");
-        } else {
-            alert("\nThe number you guessed is to high :( \nTry again!");
-        }
-
-        //  DECREMENT AND CHANCE RESET
-        if (userNumber != compNumber) {
-            n--
-        } else {
-            n = 3;
-        }
-
-        //  GAME OVER CONDITION
-        if (n == 0) {
-            gameOn = confirm("GAME OVER!!!! \nThe Number is " + compNumber + ". Play again??")
-            playGame = false;
-            n = 3
-        }
+    if (userNumber != compNumber) {
+        n--
+    } else {
+        n = 5;
+    }
+    if (n == 0) {
+        playGame = confirm("GAME OVER!!!! Play again??")
+        n = 5
     }
 }
 
